@@ -10,7 +10,7 @@ This is a simple C++ project for learning the file structure and deployment of t
 
 #### Todo
 
-- [ ] Add Gradio weui.
+- [ ] Add Gradio webui.
 
 #### Dependencies and Installation
 
