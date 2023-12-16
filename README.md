@@ -1,3 +1,6 @@
+<p align="center">
+    <img height="60px" width="60px" src="doc/cpp.svg" />
+</p>
 # A simple calculator to learn C++ basic project files required
 
 #### Base Program
