@@ -3,7 +3,7 @@ import gradio as gr
 
 def call_cpp_program(a, b):
     # 调用C++程序
-    result = subprocess.run(['./calculator.exe', str(a), str(b)], capture_output=True, text=True)
+    result = subprocess.run(['./calculator', str(a), str(b)], capture_output=True, text=True)
     
     # 返回C++程序的输出
     return result.stdout

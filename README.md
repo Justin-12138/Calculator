@@ -6,11 +6,13 @@ This is a simple C++ project for learning the file structure and deployment of t
 
 #### Update
 
++ **2023.12.17**:Linux+Windows platform makefile.:mag:
+
 + **2023.12.16**:Base code in cpp:cactus:
 
 #### Todo
 
-- [ ] Add Gradio webui.
+- [x] Add Gradio webui.
 - [ ] Add more cal method.eg:sin,cos,log.
 
 #### Dependencies and Installation
@@ -36,6 +38,11 @@ Windows
 # clone this repo
 git clone https://github.com/Justin-12138/Calculator.git
 
+# create python virtual environment
+python -m venv .
+pip install gradio==3.44.4
+make
+
 ```
 
 Docker
@@ -46,7 +53,7 @@ Docker
 
 #### License
 
-
+This project is licensed under <a rel="license" href="https://github.com/Justin-12138/Calculator/blob/main/LICENSE">MIT License</a>. Redistribution and use should follow this license.
 
 #### Contact
 
