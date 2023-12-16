@@ -11,27 +11,37 @@ This is a simple C++ project for learning the file structure and deployment of t
 #### Todo
 
 - [ ] Add Gradio webui.
+- [ ] Add more cal method.eg:sin,cos,log.
 
 #### Dependencies and Installation
 
 + opsys:Linux 6.2.0-39-generic #40~22.04.1-Ubuntu
 + gcc version :11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
 + python==3.10.8
++ Gradio==3.44.4
 
 Linux
 
 ```latex
+# clone this repo
+git clone https://github.com/Justin-12138/Calculator.git
 
+# build
+make
 ```
 
 Windows
 
 ```latex
+# clone this repo
+git clone https://github.com/Justin-12138/Calculator.git
+
 ```
 
 Docker
 
 ```latex
+
 ```
 
 #### License
