@@ -1,27 +1,36 @@
 CC=g++
 CFLAGS=-I.
+OBJDIR=bin
 
 ifeq ($(OS),Windows_NT)
     PYTHON=python
     SCRIPT=src/main.py
 else
     PYTHON=python3
-    SCRIPT=/src/linux_main.py
+    SCRIPT=src/linux_main.py
 endif
 
-all: calculator run-python
+_OBJS = main.o Calculator.o
+OBJS = $(patsubst %,$(OBJDIR)/%,$(_OBJS))
 
-calculator: main.o Calculator.o
-	$(CC) -o calculator main.o Calculator.o
+all: directories calculator run-python
 
-main.o: src/main.cpp
-	$(CC) -c src/main.cpp
+directories: $(OBJDIR)
 
-Calculator.o: src/Calculator.cpp
-	$(CC) -c src/Calculator.cpp
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+calculator: $(OBJS)
+	$(CC) -o calculator $(OBJS)
+
+$(OBJDIR)/main.o: src/main.cpp
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(OBJDIR)/Calculator.o: src/Calculator.cpp
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 run-python:
 	$(PYTHON) $(SCRIPT)
 
 clean:
-	rm -f *.o calculator
+	rm -f $(OBJDIR)/*.o calculator
