@@ -6,11 +6,11 @@
 
 #### Base Program
 
-This is a simple C++ project for learning the file structure and deployment of the project:hugs:
+This is a simple C++ project for learning the file structure and deployment of the project🤗
 
 #### Update
 
-+ **2023.12.17**:Linux+Windows platform makefile.:mag:
++ **2023.12.17**:Linux+Windows platform makefile.🔍
 
 + **2023.12.16**:Base code in cpp:cactus:
 
