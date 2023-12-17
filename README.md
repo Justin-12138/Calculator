@@ -20,22 +20,14 @@ This is a simple C++ project for learning the file structure and deployment of t
 
 #### Dependencies and Installation
 
-+ opsys:Linux 6.2.0-39-generic #40~22.04.1-Ubuntu
-+ gcc version :11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-+ python==3.10.8
-+ Gradio==3.44.4
-
 Linux
 
-```latex
-# clone this repo
-git clone https://github.com/Justin-12138/Calculator.git
-
-# build
-make
-```
-
-Windows
++ opsys: Linux 6.2.0-39-generic #40~22.04.1-Ubuntu
++ gcc version: 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
++ g++ version: 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04)
++ Make version: GNU Make 4.3
++ python==3.10.8
++ Gradio==3.44.4
 
 ```latex
 # clone this repo
@@ -43,7 +35,30 @@ git clone https://github.com/Justin-12138/Calculator.git
 
 # create python virtual environment
 python -m venv .
-pip install gradio==3.44.4
+pip install -r requirements.txt
+
+# build
+make
+```
+
+Windows
+
++ opsys:Windows 11 Family Chinese version
++ gcc version: 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project)
++ g++ version: 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project)
++ Make version: GNU Make 4.4.1
++ python==3.10.8
++ Gradio==3.44.4
+
+```latex
+# clone this repo
+git clone https://github.com/Justin-12138/Calculator.git
+
+# create python virtual environment
+python -m venv .
+pip install -r requirements.txt
+
+# build
 make
 
 ```
