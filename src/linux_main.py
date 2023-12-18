@@ -16,16 +16,11 @@ iface = gr.Interface(
     description = r"""<center><img src='https://raw.githubusercontent.com/Justin-12138/Calculator/778e0ca56e8b5672064e2b5866f6cf0d3aef8178/doc/cpp.svg' alt='CPP'></center>
     <b>Official Gradio demo</b> for <a href='https://github.com/Justin-12138/Calculator' target='_blank'><b>Calculater</b></a>.<br>
     """,
-    fn=call_cpp_program,  # 处理函数
-    inputs=[gr.inputs.Number(label="number a"), gr.inputs.Number(label="number b")],  # 输入组件
+    fn=calculate,  # 处理函数
+    inputs="text",  # 输入组件
     outputs="text",  # 输出组件
     allow_flagging="never"
     
 )
 
-<<<<<<< HEAD
 iface.launch(auth=("admin", "pass1234"),server_name='0.0.0.0', server_port=7860)
-=======
-iface.launch(auth=("admin", "pass1234"),server_name='0.0.0.0', server_port=7860)
-
->>>>>>> 0114b49377bd1896ab15709068306756462d5b35
