@@ -1,13 +1,16 @@
-import subprocess
+# main.py
 import gradio as gr
+import subprocess
 
-def call_cpp_program(a, b):
-    # 调用C++程序
-    result = subprocess.run(['./calculator', str(a), str(b)], capture_output=True, text=True)
-    
-    # 返回C++程序的输出
+def calculate(expression):
+    result = subprocess.run(["./calculator"], input=expression, text=True, capture_output=True)
     return result.stdout
 
+# buttons = [
+#     gr.inputs.Button(label=str(i)) for i in range(10)
+# ] + [
+#     gr.inputs.Button(label=c) for c in ['+', '-', '*', '/', '.', 'AC', '=']
+# ]
 iface = gr.Interface(
     title="Calculator: For Cpp Project",
     description = r"""<center><img src='https://raw.githubusercontent.com/Justin-12138/Calculator/778e0ca56e8b5672064e2b5866f6cf0d3aef8178/doc/cpp.svg' alt='CPP'></center>
@@ -20,5 +23,4 @@ iface = gr.Interface(
     
 )
 
-iface.launch()
-
+iface.launch(auth=("admin", "pass1234"),server_name='0.0.0.0', server_port=7860)

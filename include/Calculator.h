@@ -1,19 +1,22 @@
+// Calculator.h
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-#include <cmath>
+#include <stack>
+#include <string>
 
 class Calculator {
 public:
-    double add(double a, double b);
-    double subtract(double a, double b);
-    double multiply(double a, double b);
-    double divide(double a, double b);
-    double logarithm(double a);
-    double squareRoot(double a);
-    double power(double a, double b);
-    double sine(double a);
-    double cosine(double a);
+    Calculator();
+    double calculate(std::string input);
+    void clear();
+
+private:
+    std::stack<char> ops;
+    std::stack<double> nums;
+
+    int precedence(char op);
+    double applyOp(double a, double b, char op);
 };
 
 #endif // CALCULATOR_H

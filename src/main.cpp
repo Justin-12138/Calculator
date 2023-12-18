@@ -1,23 +1,20 @@
-#include <iostream>
-#include <cstdlib>
+// main.cpp
 #include "../include/Calculator.h"
+#include <iostream>
 
-using namespace std;
+int main() {
+    Calculator calc;
+    std::string input;
 
-int main(int argc, char* argv[]){
-    if (argc != 3) {
-        cerr << "Usage: " << argv[0] << " <num1> <num2>" << endl;
-        return 1;
+    while (std::getline(std::cin, input)) {
+        if (input == "q") break;
+
+        try {
+            std::cout << calc.calculate(input) << std::endl;
+        } catch (const std::exception& e) {
+            std::cout << "Error: " << e.what() << std::endl;
+        }
     }
 
-    Calculator calculator;
-    double a = atof(argv[1]);
-    double b = atof(argv[2]);
-
-    cout << "Add: " << calculator.add(a, b) << endl;
-    cout << "Subtract: " << calculator.subtract(a, b) << endl;
-    cout << "Multiply: " << calculator.multiply(a, b) << endl;
-    cout << "Divide: " << calculator.divide(a, b) << endl;
     return 0;
 }
-
