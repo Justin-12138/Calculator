@@ -23,4 +23,9 @@ iface = gr.Interface(
     
 )
 
+<<<<<<< HEAD
 iface.launch(auth=("admin", "pass1234"),server_name='0.0.0.0', server_port=7860)
+=======
+iface.launch(auth=("admin", "pass1234"),server_name='0.0.0.0', server_port=7860)
+
+>>>>>>> 0114b49377bd1896ab15709068306756462d5b35
