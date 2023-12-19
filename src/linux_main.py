@@ -13,7 +13,7 @@ def calculate(expression):
 # ]
 iface = gr.Interface(
     title="Calculator: For Cpp Project",
-    description = r"""<center><img src='https://raw.githubusercontent.com/Justin-12138/Calculator/778e0ca56e8b5672064e2b5866f6cf0d3aef8178/doc/cpp.svg' alt='CPP'></center>
+    description = r"""<center><img src='https://raw.githubusercontent.com/Justin-12138/Calculator/8e8383c961171209620f453bd6f00442257184bb/doc/assets/calc.svg' alt='CPP'></center>
     <b>Official Gradio demo</b> for <a href='https://github.com/Justin-12138/Calculator' target='_blank'><b>Calculater</b></a>.<br>
     """,
     fn=calculate,  # 处理函数
