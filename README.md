@@ -1,5 +1,5 @@
 <p align="center">
-    <img height="60px" width="60px" src="doc/cpp.svg" />
+    <img height="60px" width="60px" src="doc/assets/calc.svg" />
 </p>
 
 #  A simple calculator to learn C++ basic project files required
