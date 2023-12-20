@@ -18,6 +18,7 @@ This is a simple C++ project for learning the file structure and deployment of t
 
 - [x] Add Gradio webui.
 - [ ] Add more cal method.eg:sin,cos,log.
+- [ ] Add button for input exp.
 
 #### Dependencies and Installation
 
