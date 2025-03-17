@@ -1,31 +1,64 @@
-let display = document.getElementById('display');
+class CalculatorUI {
+    constructor() {
+        this.display = document.getElementById('display');
+        this.historyList = document.getElementById('history');
+        this.initEventListeners();
+    }
 
-function appendToDisplay(value) {
-    display.value += value;
-}
+    initEventListeners() {
+        document.querySelectorAll('.buttons button').forEach(button => {
+            if (!button.classList.contains('equals')) {
+                button.addEventListener('click', () => this.appendToDisplay(button.textContent));
+            }
+        });
 
-function clearDisplay() {
-    display.value = '';
-}
+        document.getElementById('clear').addEventListener('click', () => this.clearDisplay());
+        document.getElementById('calculate').addEventListener('click', () => this.calculate());
+    }
 
-async function calculate() {
-    try {
-        const expression = display.value;
-        const response = await fetch('/calculate', {
+    appendToDisplay(value) {
+        this.display.value += value;
+    }
+
+    clearDisplay() {
+        this.display.value = '';
+    }
+
+    async calculate() {
+        const expression = this.display.value;
+        if (!expression) return;
+
+        try {
+            const result = await this.fetchCalculation(expression);
+            this.display.value = result;
+            this.addToHistory(expression, result);
+        } catch (error) {
+            this.display.value = 'Error';
+            console.error('Calculation error:', error);
+        }
+    }
+
+    async fetchCalculation(expression) {
+        const response = await fetch('/api/calculate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ expression: expression })
+            body: JSON.stringify({ expression })
         });
 
         const data = await response.json();
         if (data.error) {
             throw new Error(data.error);
         }
-        display.value = data.result;
-    } catch (error) {
-        display.value = 'Error';
-        console.error('Calculation error:', error);
+        return data.result;
+    }
+
+    addToHistory(expression, result) {
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="expression">${expression}</span> = <span class="result">${result}</span>`;
+        this.historyList.prepend(li);
     }
 }
+
+new CalculatorUI();

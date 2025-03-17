@@ -1,80 +1,76 @@
-<p align="center">
-    <img height="60px" width="60px" src="doc/assets/calc.svg" />
-</p>
+# RESTful Calculator
 
-#  A simple calculator to learn C++ basic project files required
+A modern calculator application with RESTful API backend and responsive web frontend.
 
-#### Base Program
+## Features
 
-This is a simple C++ project for learning the file structure and deployment of the project🤗
+- **RESTful API**: Backend provides clean API endpoints
+- **Responsive UI**: Modern, mobile-friendly interface
+- **Calculation History**: Keeps track of previous calculations
+- **Unit Tests**: Comprehensive test coverage
+- **Cross-platform**: Runs on Linux, Windows, and macOS
 
-#### Update
+## Tech Stack
 
-+ **2023.12.17**:Linux+Windows platform makefile.🔍
+- **Backend**: C++ with httplib
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Testing**: Google Test
+- **Build System**: CMake
 
-+ **2023.12.16**:Base code in cpp:cactus:
+## Installation
 
-#### Todo
+### Prerequisites
+- CMake >= 3.10
+- C++17 compiler
+- Git
 
-- [x] Add Gradio webui.
-- [ ] Add more cal method.eg:sin,cos,log.
-- [ ] Add button for input exp.
+### Build Instructions
 
-#### Dependencies and Installation
-
-Linux
-
-+ opsys: Linux 6.2.0-39-generic #40~22.04.1-Ubuntu
-+ gcc version: 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-+ g++ version: 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04)
-+ Make version: GNU Make 4.3
-+ python==3.10.8
-+ Gradio==3.44.4
-
-```latex
-# clone this repo
+```bash
 git clone https://github.com/Justin-12138/Calculator.git
-
-# create python virtual environment
-python -m venv .
-pip install -r requirements.txt
-
-# build
+cd Calculator
+mkdir build
+cd build
+cmake ..
 make
 ```
 
-Windows
+## Running the Application
 
-+ opsys:Windows 11 Family Chinese version
-+ gcc version: 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project)
-+ g++ version: 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project)
-+ Make version: GNU Make 4.4.1
-+ python==3.10.8
-+ Gradio==3.44.4
-
-```latex
-# clone this repo
-git clone https://github.com/Justin-12138/Calculator.git
-
-# create python virtual environment
-python -m venv .
-pip install -r requirements.txt
-
-# build
-make
-
+```bash
+./Calculator
 ```
 
-Docker
+Then open your browser and navigate to `http://localhost:8080`
 
-```latex
+## Running Tests
 
+```bash
+./CalculatorTest
 ```
 
-#### License
+## API Documentation
 
-This project is licensed under <a rel="license" href="https://github.com/Justin-12138/Calculator/blob/main/LICENSE">MIT License</a>. Redistribution and use should follow this license.
+### POST /api/calculate
 
-#### Contact
+**Request Body:**
+```json
+{
+    "expression": "2+3*4"
+}
+```
 
-If you have any questions, please feel free to reach me out at `justinliu707@gmail.com`. 
+**Response:**
+```json
+{
+    "result": 14
+}
+```
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
